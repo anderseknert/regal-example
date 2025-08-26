@@ -1,0 +1,18 @@
+name: Run Regal Lint Check
+
+on: [push]
+
+jobs:
+  lint-rego:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v5
+
+    - name: Setup Regal
+      uses: open-policy-agent/setup-regal@v1
+      with:
+        version: latest
+
+    - name: Lint
+      run: regal lint --format github ./policy

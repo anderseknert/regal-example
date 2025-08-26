@@ -1,0 +1,11 @@
+rules:
+  style:
+    line-length:
+      ignore:
+        files:
+          - "docs"
+
+project:
+  roots:
+    - build/policy
+  
